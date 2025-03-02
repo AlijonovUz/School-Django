@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card shadow-lg border-danger">
+                <div class="card-header text-center bg-danger text-white">
+                    <h4 class="mb-0">Kursni o'chirishni tasdiqlang</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-center">Siz <strong>{{ object.title }}</strong> kursini o'chirmoqchisiz. Bu amalni tasdiqlaysizmi?</p>
+
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-danger btn-lg btn-block">Ha, o'chirish</button>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'index' %}" class="btn btn-outline-primary btn-lg btn-block">Yo'q, bekor qilish</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
