@@ -171,6 +171,7 @@ class SettingsForm(forms.ModelForm):
 
         return about
 
+
 class PasswordForm(PasswordChangeForm):
     class Meta:
         model = MyUser
